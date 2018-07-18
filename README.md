@@ -1,4 +1,4 @@
-# Angular6_RegistrationForm
+# Angular6 Registration Form
 
 ## Development server
 
