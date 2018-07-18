@@ -1,0 +1,69 @@
+<div class="col-xs-8 col-xs-offset-2">
+  <form (ngSubmit)="submitForm(form)" #form="ngForm">
+    <h2 class="text-center">Registration Form</h2>
+    <div ngModelGroup="user" #user="ngModelGroup">
+      <div class="form-group" [ngClass]="{'has-error': email.invalid && email.touched}">
+      <label>Email</label>
+      <input type="text"
+             class="form-control"
+             ngModel
+             name="email"
+             required
+             email
+             #email="ngModel"
+      >
+      <p *ngIf="email.invalid && email.touched" class="alert alert-danger">Please, type right email.</p>
+    </div>
+      <div class="form-group" [ngClass]="{'has-error': password.invalid && password.touched}">
+      <label>Password</label>
+      <input type="password"
+             class="form-control"
+             ngModel
+             name="password"
+             required
+             #password="ngModel"
+      >
+      <p *ngIf="password.invalid && password.touched" class="alert alert-danger">Please, type correct password.</p>
+        <button type="button" class="btn btn-primary text-lowercase"(click)="addRandomPassword()">password generator</button>
+    </div>
+    </div>
+    <div class="form-group">
+      <label>Select states</label>
+      <select class="form-control"
+              ngModel
+              name="states"
+      >
+        <option value="al">Alabama</option>
+        <option value="ak">Alaska</option>
+        <option value="az">Arizona</option>
+        <option value="ar">Arkansas</option>
+        <option value="ca">California</option>
+        <option value="co">Colorado</option>
+        <option value="ct">Connecticut</option>
+        <option value="de">Delaware</option>
+        <option value="fl">Florida</option>
+        <option value="ga">Georgia</option>
+        <option value="hi">Hawaii</option>
+        <option value="ida">Idaho</option>
+        <option value="il">Illinois</option>
+      </select>
+    </div>
+    <p class="text-left font-italic">Would you like to receive emails
+      about special offers and new product information from Best Online Offers.</p>
+    <div class="radio checkbox-inline" *ngFor="let ans of answers">
+      <label>
+        <input type="radio"
+               [value]="ans.type"
+               [ngModel]="defaultAnswer"
+               name="answer"
+        > {{ans.text}}
+      </label>
+    </div>
+    <button class="btn btn-success btn-block"
+            type="submit"
+            [disabled]="!form.valid"
+    >SAVE</button>
+
+  </form>
+  <div *ngIf="isSubmited"><pre>{{formData | json }}</pre></div>
+</div>
