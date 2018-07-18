@@ -2,11 +2,14 @@
 html
 {
   height: 100vh;
-  background-image: linear-gradient(294deg, #21D4FD 0%, #B721FF 80%);
+  /*background: ;*/
+
 }
 
 body {
   margin-top: 50px;
+  background: url("../pencil2.png") no-repeat right top, linear-gradient(294deg, #21D4FD 0%, #B721FF 80%);
+  background-size: auto 45em, cover;
 }
 .col-xs-8 {
   border-radius: 5px;
