@@ -10,6 +10,7 @@ body {
   margin-top: 50px;
   background: url("../pencil2.png") no-repeat right top, linear-gradient(294deg, #21D4FD 0%, #B721FF 80%);
   background-size: auto 45em, cover;
+
 }
 .col-xs-8 {
   border-radius: 5px;
@@ -26,4 +27,7 @@ div.checkbox-inline {
 }
 .checkbox-inline+.checkbox-inline, .radio-inline+.radio-inline {
   margin-top: 10px;
+}
+input, .drop{
+  cursor: pointer;
 }
